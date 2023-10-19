@@ -26,7 +26,7 @@ Este repositório está aberto a contribuições. Se você é um aluno da matér
   - [GitHub](https://github.com/garpereira)
 
 - André Silva
-  - [GitHub](https://github.com/andresilva)
+  - [GitHub](https://github.com/andreqsilva)
 
 Este projeto foi desenvolvido como parte da disciplina de Computação Gráfica na UNIFESP - Campus São José dos Campos.
 
