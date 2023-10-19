@@ -6,6 +6,10 @@ Bem-vindo ao repositório de Computação Gráfica da Universidade Federal de S�
 
 Neste repositório, você encontrará o projeto desenvolvido como parte da matéria de Computação Gráfica. O projeto é um jogo 3D que envolve o lançamento de um dardo em um ambiente virtual. Os alunos se empenharam em aplicar conceitos de computação gráfica, modelagem 3D, animação e interatividade para criar este jogo emocionante.
 
+## Tecnologias Utilizadas
+
+O jogo foi produzido utilizando a linguagem C com a API do OpenGL.
+
 ## Como Utilizar Este Repositório
 
 - **Documentação**: Você pode encontrar a documentação do projeto na pasta `documentacao/`. Esta documentação inclui informações sobre a implementação, os recursos utilizados e as decisões de design.
