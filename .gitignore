@@ -6,7 +6,7 @@ labirinto
 *
 
 # Exceto
-!labirinto.c
+!labirinto_parte1.c
 !labirintoH.h
 !README.md
 !recursos-3d/
