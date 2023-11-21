@@ -1,10 +1,10 @@
 # Repositório de Computação Gráfica - Trabalho Final
 
-Bem-vindo ao repositório de Computação Gráfica da Universidade Federal de São Paulo - Campus São José dos Campos. Este repositório foi criado para armazenar e compartilhar o trabalho final da disciplina de Computação Gráfica, que consiste em um jogo 3D de lançamento de dardo.
+Bem-vindo ao repositório de Computação Gráfica da Universidade Federal de São Paulo - Campus São José dos Campos. Este repositório foi criado para armazenar e compartilhar o trabalho final da disciplina de Computação Gráfica, que consiste em um jogo 3D de labirinto e tiro ao alvo.
 
 ## Descrição do Projeto
 
-Neste repositório, você encontrará o projeto desenvolvido como parte da matéria de Computação Gráfica. O projeto é um jogo 3D que envolve o lançamento de um dardo em um ambiente virtual. Os alunos se empenharam em aplicar conceitos de computação gráfica, modelagem 3D, animação e interatividade para criar este jogo emocionante.
+Neste repositório, você encontrará o projeto desenvolvido como parte da matéria de Computação Gráfica. O projeto é um jogo 3D que envolve a movimentação em perspectiva em um labirinto procurando alvos em um ambiente virtual. Os alunos se empenharam em aplicar conceitos de computação gráfica, modelagem 3D, animação e interatividade para criar este jogo emocionante.
 
 ## Tecnologias Utilizadas
 
