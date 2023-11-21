@@ -15,35 +15,9 @@ double posXY[2] = {0.0f, 0.0f};
 // na perspectiva, a gente definir esses angulos como sendo a maneira com que ele viraria
 // fica meio quadrado, mas foi a melhor maneira que a gente achou de fazer isso
 
-// int anguloZTopo[4] = {0, 90, 180, 270};
-// int anguloZPersp[4] = {180, 270, 0, 90};
+int anguloZTopo[4] = {0, 90, 180, 270};
+int anguloZPersp[4] = {180, 270, 0, 90};
 int idx_anguloZ = 0;
-
-int anguloZTopo[360];
-int anguloZPersp[360];
-
-void preencheAngulo360(){
-    for(int i = 0; i < 360; i++){
-        anguloZTopo[i] = i;
-    }
-    int index = 0;
-    for(int i = 180; i < 270; i++){
-        anguloZPersp[index] = i;
-        index++;
-    }
-    for(int i = 270; i < 360; i++){
-        anguloZPersp[index] = i;
-        index++;
-    }
-    for(int i = 0; i < 90; i++){
-        anguloZPersp[index] = i;
-        index++;
-    }
-    for(int i = 90; i < 180; i++){
-        anguloZPersp[index] = i;
-        index++;
-    }
-}
 
 //==============================================================
 //========================= VIEWPORTS ==========================
@@ -224,30 +198,38 @@ void draw_obj() {
 //       POSICOES DE ANGULO     //
 //////////////////////////////////
 void caminhaPraFrente() {
-    if(idx_anguloZ == 0)
-        posXY[1] -= incr;
-    else if(idx_anguloZ == 90)
-        posXY[0] -= incr;
-    else if(idx_anguloZ == 180)
-        posXY[1] += incr;
-    else if(idx_anguloZ == 270)
-        posXY[0] += incr;
-
-    
-    
+    switch (idx_anguloZ) {
+        case 0:
+            posXY[1] -= incr;
+            break;
+        case 1:
+            posXY[0] -= incr;
+            break;
+        case 2:
+            posXY[1] += incr;
+            break;
+        case 3:
+            posXY[0] += incr;
+            break;
+    }
     printf("Frente: X=%.2f, Y=%.2f\n", posXY[0], posXY[1]);
 }
 
 void caminhaPraTras() {
-
-    if(idx_anguloZ == 0)
-        posXY[1] += incr;
-    else if(idx_anguloZ == 90)
-        posXY[0] += incr;
-    else if(idx_anguloZ == 180)
-        posXY[1] -= incr;
-    else if(idx_anguloZ == 270)
-        posXY[0] -= incr;
+    switch (idx_anguloZ) {
+        case 0:
+            posXY[1] += incr;
+            break;
+        case 1:
+            posXY[0] += incr;
+            break;
+        case 2:
+            posXY[1] -= incr;
+            break;
+        case 3:
+            posXY[0] -= incr;
+            break;
+    }
     printf("Trás: X=%.2f, Y=%.2f\n", posXY[0], posXY[1]);
 }
 
@@ -259,14 +241,14 @@ void caminhaPraTras() {
 void viraEsquerda() {
     idx_anguloZ--;
     if (idx_anguloZ < 0) {
-        idx_anguloZ = 359;
+        idx_anguloZ = 3;
     }
     printf("esquerda -> %d\n", idx_anguloZ);
 }
 
 // Quando a gente ta andando na direção da direita, os indices avançam normal no vetor de anguloZ
 void viraDireita() {
-    idx_anguloZ = (idx_anguloZ + 1) % 360;
+    idx_anguloZ = (idx_anguloZ + 1) % 4;
     printf("direita -> %d\n", idx_anguloZ);
 }
 
@@ -313,7 +295,6 @@ void idle() {
 }
 
 int main(int argc, char** argv) {
-    preencheAngulo360();
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(tamanho, tamanho);

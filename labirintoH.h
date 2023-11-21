@@ -1,4 +1,5 @@
 void viewport_topo();
+void preencheAngulo360();
 void draw_perspectiva();
 void viewport_perspectiva();
 void caminhaPraFrente();
