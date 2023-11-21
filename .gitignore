@@ -1,0 +1,8 @@
+# ignora tudo
+*.exe
+*.c
+*.h
+
+# Exceto
+!labirinto.c
+!labirintoH.h
