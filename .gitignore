@@ -2,7 +2,12 @@
 *.exe
 *.c
 *.h
+labirinto
+*
 
 # Exceto
 !labirinto.c
 !labirintoH.h
+!README.md
+!recursos-3d/
+!*.gitignore

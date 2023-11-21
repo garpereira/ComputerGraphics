@@ -4,10 +4,10 @@
 
 #include "labirintoH.h"
 
-//gcc -o labirinto labirinto_v2.c -lGL -lGLU -lglut
+//gcc -o labirinto labirinto.c -lGL -lGLU -lglut
 
 int tamanho = 512;
-int incr = 0.01f;
+double incr = 0.01f;
 double posXY[2] = {0.0f, 0.0f};
 
 // Aqui, o anguloZ é o angulo que o personagem está olhando
@@ -41,6 +41,74 @@ void viewport_topo() {
     glPopMatrix();
 }
 
+void draw_topo(){
+    glLineWidth(2);
+
+    // contorno do viewport
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_LINE_LOOP);
+    glVertex3f( 1.0f,  1.0f, 0.0f);
+    glVertex3f( 1.0f, -1.0f, 0.0f);
+    glVertex3f(-1.0f, -1.0f, 0.0f);
+    glVertex3f(-1.0f,  1.0f, 0.0f);
+    glEnd();
+
+    // chao do viewport
+    glBegin(GL_QUADS);
+    glColor3f(0.95f, 0.95f, 0.95f);
+    glVertex3f( 1.0f,  1.0f, 0.0f);
+    glVertex3f( 1.0f, -1.0f, 0.0f);
+    glVertex3f(-1.0f, -1.0f, 0.0f);
+    glVertex3f(-1.0f,  1.0f, 0.0f);
+    glEnd();
+
+    //Parede Vermelha
+    glBegin(GL_QUADS);
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glVertex3f(-0.75f,  0.75f, -0.05f);
+    glVertex3f( 0.75f,  0.75f, -0.05f);
+    glVertex3f( 0.75f,  0.75f -0.05f, -0.05f);
+    glVertex3f(-0.75f,  0.75f -0.05f, -0.05f);
+    glEnd();
+
+    //Parede Azul
+    glBegin(GL_QUADS);
+    glColor3f(0.0f, 0.0f, 1.0f);
+    glVertex3f(-0.75f, -0.75f, -0.05f);
+    glVertex3f( 0.75f, -0.75f, -0.05f);
+    glVertex3f( 0.75f, -0.75f + 0.05f, -0.05f);
+    glVertex3f(-0.75f, -0.75f + 0.05f, -0.05f);
+    glEnd();
+
+    //Parede Verde
+    glBegin(GL_QUADS);
+    glColor3f(0.0f, 1.0f, 0.0f);
+    glVertex3f( 0.75f,  0.75f, -0.05f);
+    glVertex3f( 0.75f, -0.75f, -0.05f);
+    glVertex3f( 0.75f - 0.05f, -0.75f, -0.05f);
+    glVertex3f( 0.75f - 0.05f,  0.75f, -0.05f);
+    glEnd();
+
+    //Parede Amarela
+    glBegin(GL_QUADS);
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glVertex3f(-0.75f,  0.75f, -0.05f);
+    glVertex3f(-0.75f, -0.75f, -0.05f);
+    glVertex3f(-0.75f + 0.05f, -0.75f, -0.05f);
+    glVertex3f(-0.75f + 0.05f,  0.75f, -0.05f);
+    glEnd();
+
+    //Parede Cinza
+    glBegin(GL_QUADS);
+    glColor3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(-0.55f,  0.55f, 0.05f);
+    glVertex3f(-0.55f, -0.55f, 0.05f);
+    glVertex3f(-0.55f + 0.05, -0.55f, 0.0f);
+    glVertex3f(-0.55f + 0.05,  0.55f, 0.0f);
+    glEnd();
+
+}
+
 void viewport_perspectiva() {
     glViewport(0, 0, tamanho, tamanho);
 
@@ -60,122 +128,70 @@ void viewport_perspectiva() {
     glPopMatrix();
 }
 
-void draw_obj() {
-    glBegin(GL_TRIANGLES);
-    glColor3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(0.05f, 0.05f, -0.05f);
-    glVertex3f(-0.05f, 0.05f, -0.05f);
-    glVertex3f(0.0f, -2 * 0.05f, -0.05f);
-    glEnd();
-}
-
-void draw_topo(){
-    glLineWidth(2);
-
-    // contorno do viewport
-    glColor3f(0.0f, 0.0f, 0.0f);
-    glBegin(GL_LINE_LOOP);
-    glVertex3f(1.0f, 1.0f, 0.0f);
-    glVertex3f(1.0f, -1.0f, 0.0f);
-    glVertex3f(-1.0f, -1.0f, 0.0f);
-    glVertex3f(-1.0f, 1.0f, 0.0f);
-    glEnd();
-
-    // chao do viewport
-    glBegin(GL_QUADS);
-    glColor3f(0.95f, 0.95f, 0.95f);
-    glVertex3f(1.0f, 1.0f, 0.0f);
-    glVertex3f(1.0f, -1.0f, 0.0f);
-    glVertex3f(-1.0f, -1.0f, 0.0f);
-    glVertex3f(-1.0f, 1.0f, 0.0f);
-    glEnd();
-
-    //Parede Vermelha
-    glBegin(GL_QUADS);
-    glColor3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(-0.75f, 0.75f, -0.05f);
-    glVertex3f(0.75f, 0.75f, -0.05f);
-    glVertex3f(0.75f, 0.70f, -0.05f);
-    glVertex3f(-0.75f, -0.70f, -0.05f);
-    glEnd();
-
-    //Parede Azul
-    glBegin(GL_QUADS);
-    glColor3f(0.0f, 0.0f, 1.0f);
-    glVertex3f(-0.75f, -0.75f, -0.05f);
-    glVertex3f(0.75f, -0.75f, -0.05f);
-    glVertex3f(0.75f, -0.70f, -0.05f);
-    glVertex3f(-0.75f, -0.70f, -0.05f);
-    glEnd();
-
-    //Parede Verde
-    glBegin(GL_QUADS);
-    glColor3f(0.0f, 1.0f, 0.0f);
-    glVertex3f(-0.75f, 0.75f, -0.05f);
-    glVertex3f(-0.70f, 0.75f, -0.05f);
-    glVertex3f(-0.70f, -0.75f, -0.05f);
-    glVertex3f(-0.75f, -0.75f, -0.05f);
-    glEnd();
-
-    //Parede Amarela
-    glBegin(GL_QUADS);
-    glColor3f(1.0f, 1.0f, 0.0f);
-    glVertex3f(0.75f, 0.75f, -0.05f);
-    glVertex3f(0.70f, 0.75f, -0.05f);
-    glVertex3f(0.70f, -0.75f, -0.05f);
-    glVertex3f(0.75f, -0.75f, -0.05f);
-    glEnd();
-
-}
-
 void draw_perspectiva(){
-    glLineWidth(2);
-
     // chao do viewport
     glBegin(GL_QUADS);
     glColor3f(1.0f, 1.0f, 1.0f);
-    glVertex3f(1.0f, 1.0f, 0.0f);
-    glVertex3f(1.0f, -1.0f, 0.0f);
+    glVertex3f( 1.0f,  1.0f, 0.0f);
+    glVertex3f( 1.0f, -1.0f, 0.0f);
     glVertex3f(-1.0f, -1.0f, 0.0f);
-    glVertex3f(-1.0f, 1.0f, 0.0f);
+    glVertex3f(-1.0f,  1.0f, 0.0f);
     glEnd();
 
     //Parede Vermelha
     glBegin(GL_QUADS);
     glColor3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(-0.75f, 0.75f, -0.05f);
-    glVertex3f(0.75f, 0.75f, -0.05f);
-    glVertex3f(0.75f, 0.70f, -0.05f);
-    glVertex3f(-0.75f, -0.70f, -0.05f);
+    glVertex3f(-0.75f,  0.75f, 0.05f);
+    glVertex3f( 0.75f,  0.75f, 0.05f);
+    glVertex3f( 0.75f,  0.75f, 0.0f);
+    glVertex3f(-0.75f,  0.75f, 0.0f);
     glEnd();
 
     //Parede Azul
     glBegin(GL_QUADS);
     glColor3f(0.0f, 0.0f, 1.0f);
-    glVertex3f(-0.75f, -0.75f, -0.05f);
-    glVertex3f(0.75f, -0.75f, -0.05f);
-    glVertex3f(0.75f, -0.70f, -0.05f);
-    glVertex3f(-0.75f, -0.70f, -0.05f);
+    glVertex3f(-0.75f, -0.75f, 0.05f);
+    glVertex3f( 0.75f, -0.75f, 0.05f);
+    glVertex3f( 0.75f, -0.75f, 0.0f);
+    glVertex3f(-0.75f, -0.75f, 0.0f);
     glEnd();
 
     //Parede Verde
     glBegin(GL_QUADS);
     glColor3f(0.0f, 1.0f, 0.0f);
-    glVertex3f(-0.75f, 0.75f, -0.05f);
-    glVertex3f(-0.70f, 0.75f, -0.05f);
-    glVertex3f(-0.70f, -0.75f, -0.05f);
-    glVertex3f(-0.75f, -0.75f, -0.05f);
+    glVertex3f( 0.75f,  0.75f, 0.05f);
+    glVertex3f( 0.75f, -0.75f, 0.05f);
+    glVertex3f( 0.75f, -0.75f, 0.0f);
+    glVertex3f( 0.75f,  0.75f, 0.0f);
     glEnd();
 
     //Parede Amarela
     glBegin(GL_QUADS);
     glColor3f(1.0f, 1.0f, 0.0f);
-    glVertex3f(0.75f, 0.75f, -0.05f);
-    glVertex3f(0.70f, 0.75f, -0.05f);
-    glVertex3f(0.70f, -0.75f, -0.05f);
-    glVertex3f(0.75f, -0.75f, -0.05f);
+    glVertex3f(-0.75f,  0.75f, 0.05f);
+    glVertex3f(-0.75f, -0.75f, 0.05f);
+    glVertex3f(-0.75f, -0.75f, 0.0f);
+    glVertex3f(-0.75f,  0.75f, 0.0f);
     glEnd();
 
+    //Parede Cinza
+    glBegin(GL_QUADS);
+    glColor3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(-0.55f,  0.55f, 0.05f);
+    glVertex3f(-0.55f, -0.55f, 0.05f);
+    glVertex3f(-0.55f, -0.55f, 0.0f);
+    glVertex3f(-0.55f,  0.55f, 0.0f);
+    glEnd();
+
+}
+
+void draw_obj() {
+    glBegin(GL_TRIANGLES);
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glVertex3f( 0.05f, 0.05f, -0.05f);
+    glVertex3f(-0.05f, 0.05f, -0.05f);
+    glVertex3f( 0.0f, -2 * 0.05f, -0.05f);
+    glEnd();
 }
 
 //////////////////////////////////
@@ -196,6 +212,7 @@ void caminhaPraFrente() {
             posXY[0] += incr;
             break;
     }
+    printf("Frente: X=%.2f, Y=%.2f\n", posXY[0], posXY[1]);
 }
 
 void caminhaPraTras() {
@@ -213,6 +230,7 @@ void caminhaPraTras() {
             posXY[0] -= incr;
             break;
     }
+    printf("Trás: X=%.2f, Y=%.2f\n", posXY[0], posXY[1]);
 }
 
 //////////////////////////////////
