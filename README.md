@@ -6,6 +6,16 @@ Bem-vindo ao repositório de Computação Gráfica da Universidade Federal de S�
 
 Neste repositório, você encontrará o projeto desenvolvido como parte da matéria de Computação Gráfica. O projeto é um jogo 3D que envolve a movimentação em perspectiva em um labirinto procurando alvos em um ambiente virtual. Os alunos se empenharam em aplicar conceitos de computação gráfica, modelagem 3D, animação e interatividade para criar este jogo emocionante.
 
+## Como Compilar
+
+Como foi utilizada a API SOIL para poder carregar as texturas, então será necessária sua instalação, claro que, subentende-se que o usuário já possua o GLUT instalado na sua máquina.
+
+```
+sudo apt-get install libsoil-dev
+gcc labirinto.c -o labirinto -lglut -lGL -lGLU -lm -lSOIL
+
+```
+
 ## Tecnologias Utilizadas
 
 O jogo foi produzido utilizando a linguagem C com a API do OpenGL.
