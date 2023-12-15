@@ -12,13 +12,7 @@ O jogo foi produzido utilizando a linguagem C com a API do OpenGL.
 
 ## Como Utilizar Este Repositório
 
-- **Documentação**: Você pode encontrar a documentação do projeto na pasta `documentacao/`. Esta documentação inclui informações sobre a implementação, os recursos utilizados e as decisões de design.
-
-- **Código-Fonte**: O código-fonte do jogo está na pasta `codigo-fonte/`. Você pode explorar o código para entender como o jogo foi desenvolvido e fazer melhorias, se desejar.
-
-- **Recursos 3D**: Todos os recursos 3D, como modelos, texturas e animações, estão armazenados na pasta `recursos-3d/`.
-
-- **Instruções de Compilação e Execução**: Certifique-se de verificar o arquivo `INSTRUCOES.md` para obter informações detalhadas sobre como compilar e executar o jogo em seu ambiente.
+- **Recursos 3D**: Todos os recursos 3D, como modelos, texturas e animações, estão armazenados na pasta `Texturas/`.
 
 ## Contribuições
 
@@ -31,6 +25,11 @@ Este repositório está aberto a contribuições. Se você é um aluno da matér
 
 - André Silva
   - [GitHub](https://github.com/andreqsilva)
+ 
+## Referência de Impleentação
+
+- André Beckes
+  - [Youtube](https://youtube.com.br/progdescomplicada)
 
 Este projeto foi desenvolvido como parte da disciplina de Computação Gráfica na UNIFESP - Campus São José dos Campos.
 
