@@ -1,6 +1,6 @@
 # Repositório de Computação Gráfica - Trabalho Final
 
-Bem-vindo ao repositório de Computação Gráfica da Universidade Federal de São Paulo - Campus São José dos Campos. Este repositório foi criado para armazenar e compartilhar o trabalho final da disciplina de Computação Gráfica, que consiste em um jogo 3D de labirinto e tiro ao alvo.
+Bem-vindo ao repositório de Computação Gráfica da Universidade Federal de São Paulo - Campus São José dos Campos. Este repositório foi criado para armazenar e compartilhar o trabalho final da disciplina de Computação Gráfica, que consiste em um jogo 3D de labirinto.
 
 ## Descrição do Projeto
 
@@ -43,10 +43,13 @@ Este repositório está aberto a contribuições. Se você é um aluno da matér
 
 - André Silva
   - [GitHub](https://github.com/andreqsilva)
- 
-## Referência de Impleentação
 
-- André Beckes
+- Gabriel de Mello Cambuy
+  - [GitHub](https://github.com/gacambuy)
+ 
+## Referência de Implementação
+
+- André Backes
   - [Youtube](https://youtube.com.br/progdescomplicada)
 
 Este projeto foi desenvolvido como parte da disciplina de Computação Gráfica na UNIFESP - Campus São José dos Campos.
