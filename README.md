@@ -16,6 +16,14 @@ gcc labirinto.c -o labirinto -lglut -lGL -lGLU -lm -lSOIL
 
 ```
 
+Para executar
+
+```
+./labirinto
+
+```
+
+
 ## Tecnologias Utilizadas
 
 O jogo foi produzido utilizando a linguagem C com a API do OpenGL.
